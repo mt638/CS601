@@ -31,7 +31,7 @@ Each student should put an 'X' under their name on the days they have meetings.
 | Date           | Manikanta varun Thunga |Sahithi Pendyala |
 |-------------   |-----------   |-----------    |
 | Nov 28(Tue)    |       X       |       X        |           
-| Dec 1 (Fri)    |        X      |               |           
-| Dec 5 (Tue)    |         X     |               |           
-| Dec 8 (Fri)    |         X     |               |           
-| Dec 12 (Tue)   |       X       |               |
+| Dec 1 (Fri)    |        X      |        X       |           
+| Dec 5 (Tue)    |         X     |        X       |           
+| Dec 8 (Fri)    |         X     |         X      |           
+| Dec 12 (Tue)   |       X       |          X     |
