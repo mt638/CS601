@@ -14,6 +14,9 @@ IS_601_Finalproject
 # Vercel
 [here](https://vercel.com/manikanta-varun-thungas-projects/cs-601).
 
+# Documentation
+[here](IS601-WEB_SYSTEMS_DEVELOPMENT).
+
 # Meeting Sign-In Sheet
 
 Each student should put an 'X' under their name on the days they have meetings.
