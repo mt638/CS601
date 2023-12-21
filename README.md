@@ -9,7 +9,7 @@ IS_601_Finalproject
 [here](./UXdesign_Technology_Research.md)!
 
 # Design
-[here](./FINAL_BUSINESS_ANALYSIS.md)!
+[here](./https://www.figma.com/file/7kZE5N6h6MYHkxplExkHl1/IS601?type=design&mode=design&t=AEFJKoG5gBNOHPqa-0)!
 
 # Meeting Sign-In Sheet
 
