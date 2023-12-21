@@ -11,6 +11,9 @@ IS_601_Finalproject
 # Design
 [here](https://www.figma.com/file/7kZE5N6h6MYHkxplExkHl1/IS601?type=design&mode=design&t=AEFJKoG5gBNOHPqa-0)!
 
+# Vercel
+[here](https://vercel.com/manikanta-varun-thungas-projects/cs-601).
+
 # Meeting Sign-In Sheet
 
 Each student should put an 'X' under their name on the days they have meetings.
