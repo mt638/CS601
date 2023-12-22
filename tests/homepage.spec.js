@@ -136,4 +136,19 @@ test('Check for submit button in SignUp Page', async ({ page }) => {
 });
 
 
+test('Check for Mailchimp in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const mailchimpImage = await page.$('img[alt*="Mailchimp"]');
+  expect(mailchimpImage).not.toBeNull();
+});
+
+test('Check SignUp Page is Opening are not', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  await expect(page).toHaveTitle(/Final Project - Fettuccine Frenzy Fiesta/);
+});
+
+
+
+
+
 
