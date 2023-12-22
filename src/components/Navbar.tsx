@@ -17,7 +17,7 @@ const Navbar = () => {
           <li>Dish</li>
           <li>Contact</li>
           <button className="bg-accent text-white px-6 py-2 rounded-3xl">
-          <Link href="/signup"> SIGNUP</Link>
+          <Link href="/signup">SIGNUP</Link>
           </button>
         </ul>
 
