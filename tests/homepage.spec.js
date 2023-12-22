@@ -21,9 +21,15 @@ test('Check SEO Meta Keywords', async ({ page }) => {
 });
 
 
+test('Check for Nav Menu', async ({ page }) => {
+  await page.goto(websitepath);
+  await page.waitForSelector('nav');
+});
+
 test('Check SignUp Page', async ({ page }) => {
   await page.goto(websitepath);
   await page.waitForSelector('nav');
   await page.click('a:has-text("SIGNUP")');
   await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
+  await page.screenshot({ path: 'after_click_home.png' });
 });
