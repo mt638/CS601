@@ -42,3 +42,29 @@ test('Check Logo Present or Not', async ({ page }) => {
     console.error('Logo is not present on the page.');
   }
 });
+
+test('Check for Menu Section', async ({ page }) => {
+  await page.goto(websitepath);
+  const ourMenuElement = await page.$('h2:text("Our Menu")');
+  expect(ourMenuElement).not.toBeNull();
+});
+
+test('Check for About us Section', async ({ page }) => {
+  await page.goto(websitepath);
+  const aboutusElement = await page.$('h2:text("About Us")');
+  expect(aboutusElement).not.toBeNull();
+});
+
+
+test('Check for Featured Food Section', async ({ page }) => {
+  await page.goto(websitepath);
+  const featuredFoodElement = await page.$('h2:text("Featured Food")');
+  expect(featuredFoodElement).not.toBeNull();
+});
+
+test('Check for Services Section', async ({ page }) => {
+  await page.goto(websitepath);
+  const servicesElement = await page.$('h2:text("Choose Best Service")');
+  expect(servicesElement).not.toBeNull();
+});
+
