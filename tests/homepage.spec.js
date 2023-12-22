@@ -5,9 +5,7 @@ const websitepath = 'https://cs-601.vercel.app/';
 
 test('Check SEO Title', async ({ page }) => {
   await page.goto(websitepath);
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Create Next App/);
+  await expect(page).toHaveTitle(/Final Project - Fettuccine Frenzy Fiesta/);
 });
 
 test('Check SEO Meta Description', async ({ page }) => {
