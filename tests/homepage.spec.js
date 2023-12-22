@@ -22,7 +22,8 @@ test('Check SEO Meta Keywords', async ({ page }) => {
 
 
 test('Check SignUp Page', async ({ page }) => {
-  await page.goto('websitepath');
+  await page.goto(websitepath);
   await page.waitForSelector('nav');
   await page.click('a:has-text("SIGNUP")');
+  await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
 });
