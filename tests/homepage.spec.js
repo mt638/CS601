@@ -98,7 +98,7 @@ const consentBanner = await page.$(':text("cookies")');
 
 test('Check if Cookies page is Opening are not', async ({ page }) => {
   await page.goto(websitepath);
-  const linkWithCookies = await page.$('a[href="/cookie"]');
+  const linkWithCookies = await page.$('a[href="/cookies"]');
   expect(linkWithCookies).not.toBeNull();
   await page.click();
 });
