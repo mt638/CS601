@@ -22,3 +22,10 @@ test('Check SEO Meta Keywords', async ({ page }) => {
   await expect(metaKeywords).not.toBe('');
   await page.screenshot({ path: 'screenshots/SEOkeywords.png', fullPage: true });
 });
+
+
+test('Check SignUp Page', async ({ page }) => {
+  await page.goto('websitepath');
+  await page.click('text=SIGNUP');
+  await page.screenshot({ path: 'screenshots/signup-page.png', fullPage: true });
+});
