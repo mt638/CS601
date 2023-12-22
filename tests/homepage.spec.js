@@ -2,6 +2,7 @@
 const {test,expect} = require('@playwright/test');
 
 const websitepath = 'https://cs-601.vercel.app/';
+const websitepathSignup = 'https://cs-601.vercel.app/signup';
 
 test('Check SEO Title', async ({ page }) => {
   await page.goto(websitepath);
@@ -102,3 +103,37 @@ test('Check if Cookies page is Opening are not', async ({ page }) => {
   expect(linkWithCookies).not.toBeNull();
   await linkWithCookies.click();
 });
+
+test('Check for Subscribe Section in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const SubscribetextElement = await page.$('h2:text("Subscribe")');
+  expect(SubscribetextElement).not.toBeNull();
+});
+
+test('Check for Email Input in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const emailInput = await page.$('input[type="email"]');
+  expect(emailInput).not.toBeNull();
+});
+
+test('Check for First name Input in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const fnInput = await page.$('input[type="text"].text#mce-FNAME[name="FNAME"]');
+  expect(fnInput).not.toBeNull();
+});
+
+test('Check for Last name Input in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const lnInput = await page.$('input[type="text"].text#mce-LNAME[name="LNAME"]');
+  expect(lnInput).not.toBeNull();
+});
+
+
+test('Check for submit button in SignUp Page', async ({ page }) => {
+  await page.goto(websitepathSignup);
+  const subInput = await page.$('input[type="submit"]');
+  expect(subInput).not.toBeNull();
+});
+
+
+
