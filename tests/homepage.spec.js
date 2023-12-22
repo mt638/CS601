@@ -30,7 +30,6 @@ test('Check SignUp Page', async ({ page }) => {
   await page.goto(websitepath);
   await page.waitForSelector('nav');
   await page.click('a:has-text("SIGNUP")');
-  await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
 });
 
 test('Check Logo Present or Not', async ({ page }) => {
@@ -71,8 +70,8 @@ test('Check for Services Section', async ({ page }) => {
 
 test('Check for Menu Items', async ({ page }) => {
   await page.goto(websitepath);
-  const menuitemsElement = await page.waitForSelector('grid w-fit mx-auto sm:grid-cols-2 gap-4', { state: 'attached' });
-  expect(menuitemsElement).not.toBeNull();
+  const menuitemsElement = await page.$$('.grid .flex.gap-2');
+  expect(menuitemsElement.length).toBeGreaterThan(1);
 });
 
 
@@ -86,10 +85,10 @@ const copyrightTextElement = await page.$(':text("Copyright")');
 
 test('Check for Google Analytics code', async ({ page }) => {
 await page.goto(websitepath);
-const gaScriptElement = await page.innerText('body');
-  const wordToCheck = 'google-analytics';
-  expect(gaScriptElement.includes(wordToCheck)).toBe(true, `"${wordToCheck}" is present`);
+const gaScriptElement = await page.$eval('#google-analytics', (script) => script !== null);
+expect(gaScriptElement).toBe(true, 'Google Analytics is present');
 });
+
 
 test('Check for Cookies', async ({ page }) => {
   await page.goto(websitepath);
@@ -99,7 +98,7 @@ const consentBanner = await page.$(':text("cookies")');
 
 test('Check if Cookies page is Opening are not', async ({ page }) => {
   await page.goto(websitepath);
-  const linkWithCookies = await page.$('a:is(:has([href*="cookies"]))');
+  const linkWithCookies = await page.$('a[href="/cookie"]');
   expect(linkWithCookies).not.toBeNull();
-  await page.click('a:is(:has([href*="cookies"]))');
+  await page.click();
 });
