@@ -92,6 +92,13 @@ expect(gaScriptElement).not.toBeNull();
 
 test('Check for Cookies', async ({ page }) => {
   await page.goto(websitepath);
-const consentBanner = await page.$('.cookie-consent-banner');
+const consentBanner = await page.$(':text("cookies")');
   expect(consentBanner).not.toBeNull();
+});
+
+test('Check if Cookies page is Opening are not', async ({ page }) => {
+  await page.goto(websitepath);
+  const linkWithCookies = await page.$('a:is(:has([href*="cookies"]))');
+  expect(linkWithCookies).not.toBeNull();
+  await page.click('a:is(:has([href*="cookies"]))');
 });
