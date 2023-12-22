@@ -68,3 +68,30 @@ test('Check for Services Section', async ({ page }) => {
   expect(servicesElement).not.toBeNull();
 });
 
+
+test('Check for Menu Items', async ({ page }) => {
+  await page.goto(websitepath);
+  const menuitemsElement = await page.$('grid w-fit mx-auto sm:grid-cols-2 gap-4');
+  expect(menuitemsElement).not.toBeNull();
+});
+
+
+test('Check for Copyright', async ({ page }) => {
+  await page.goto(websitepath);
+const copyrightTextElement = await page.$(':text("Copyright")');
+  expect(copyrightTextElement).not.toBeNull();
+  const copyrightTextContent = await copyrightTextElement.innerText();
+  expect(copyrightTextContent).toContain('Copyright');
+});
+
+test('Check for Google Analytics code', async ({ page }) => {
+await page.goto(websitepath);
+const gaScriptElement = await page.$('script[src*="google-analytics.com/analytics.js"]');
+expect(gaScriptElement).not.toBeNull();
+});
+
+test('Check for Cookies', async ({ page }) => {
+  await page.goto(websitepath);
+const consentBanner = await page.$('.cookie-consent-banner');
+  expect(consentBanner).not.toBeNull();
+});
